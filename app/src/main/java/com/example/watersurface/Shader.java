@@ -48,7 +48,13 @@ public class Shader {
                 u_modelViewProjectionMatrix_Handle, 1, false, modelViewProjectionMatrix, 0);
     }
 
- 
+    public void linkModelMatrix(float [] modelMatrix){
+    GLES20.glUseProgram(program_Handle);
+    int u_modelMatrix_Handle =
+    GLES20.glGetUniformLocation(program_Handle, "u_modelMatrix");
+    GLES20.glUniformMatrix4fv(
+    u_modelMatrix_Handle, 1, false, modelMatrix, 0);
+    }
 
     public void linkCamera (float xCamera, float yCamera, float zCamera){
         GLES20.glUseProgram(program_Handle);
