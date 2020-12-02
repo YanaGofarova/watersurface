@@ -23,7 +23,9 @@ public class Texture {
         GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D,
                 GLES20.GL_TEXTURE_WRAP_S,
                 GLES20.GL_REPEAT);
-        
+        GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D,
+                GLES20.GL_TEXTURE_WRAP_T,
+                GLES20.GL_REPEAT);        
         Bitmap bitmap =
                 BitmapFactory.decodeResource(context.getResources(), idpicture);
         GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bitmap, 0);
