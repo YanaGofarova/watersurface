@@ -88,6 +88,8 @@ class MyGL20Renderer implements GLSurfaceView.Renderer {
                 a[offs+N*i*3*2+j*3*2+1]=1.0f*i/N;
                 a[offs+N*i*3*2+j*3*2+2]=1.0f*(p[i][j]).z;
                 a[offs+N*i*3*2+j*3*2+3]=1.0f*(j)/N;
+                a[offs+N*i*3*2+j*3*2+4]=1.0f*(i+1)/N;
+                a[offs+N*i*3*2+j*3*2+5]=1.0f*(p[i+1][j]).z;            
             }
         }
     }
