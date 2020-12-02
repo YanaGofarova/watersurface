@@ -23,8 +23,13 @@ public class Shader {
         GLES20.glAttachShader(program_Handle, fragmentShader_Handle);
         GLES20.glLinkProgram(program_Handle);
     }
-
-    
+    public void linkVertexBuffer(FloatBuffer vertexBuffer){
+    GLES20.glUseProgram(program_Handle);
+    int a_vertex_Handle = GLES20.glGetAttribLocation(program_Handle, "a_vertex");
+    GLES20.glEnableVertexAttribArray(a_vertex_Handle);
+    GLES20.glVertexAttribPointer(
+    a_vertex_Handle, 3, GLES20.GL_FLOAT, false, 0,vertexBuffer);
+    }    
 
     public void linkNormalBuffer(FloatBuffer normalBuffer){
         GLES20.glUseProgram(program_Handle);
